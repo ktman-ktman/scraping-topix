@@ -1,0 +1,40 @@
+{
+    "name": "python-devcontainer-template",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+        "args": {
+            "IMAGE": "ubuntu",
+            "VARIANT": "24.04",
+            "USER_NAME": "vscode",
+            "GROUP_NAME": "vscode",
+            "USER_UID": "1111",
+            "USER_GID": "1111",
+            "RYE_HOME": "${containerWorkspaceFolder}",
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "args": [
+                            "-l"
+                        ]
+                    }
+                }
+            },
+        },
+    },
+    "mounts": [
+		"source=vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
+		"source=vscode-extensions-insiders,target=/home/vscode/.vscode-server-insiders/extensions,type=volume",
+	],
+    // "runArgs": [
+    //     "--gpus",
+    //     "all",
+    // ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+}
