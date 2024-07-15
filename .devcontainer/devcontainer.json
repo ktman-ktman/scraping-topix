@@ -1,5 +1,5 @@
 {
-    "name": "python-devcontainer-template",
+    "name": "scraping-topix",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".",
