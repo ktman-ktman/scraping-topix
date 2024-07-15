@@ -7,8 +7,6 @@ authors = [
 ]
 dependencies = [
     "pyppeteer>=2.0.0",
-    "lxml>=5.2.2",
-    "requests>=2.32.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

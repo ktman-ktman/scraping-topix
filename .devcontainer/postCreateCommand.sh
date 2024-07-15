@@ -9,7 +9,7 @@ sh ./install_vscode.sh
 cd ${initial_dir}
 
 # poetry
-if [[ ! -f "./.venv" ]] && [[ -f "./poetry.lock" ]]
+if [[ ! -f "./.venv" ]] && [[ -f "./pyproject.toml" ]]
 then
-	poetry install
+	rye sync
 fi
